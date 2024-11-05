@@ -43,7 +43,7 @@ due to %Taskflow's programmability.
 | OpenTimer v2 | %Taskflow | 4482          | 20                    | $130,523 |
 </div>
 
-OpenTimer v1 relied on a pipeline data structure to adtop loop parallelism with OpenMP.
+OpenTimer v1 relied on a pipeline data structure to adopt loop parallelism with OpenMP.
 We found it very difficult to go beyond this paradigm 
 because of the insufficient support for dynamic dependencies in OpenMP. 
 With %Taskflow in place, we can break this
@@ -60,8 +60,8 @@ The following figure shows a task graph to carry one iteration of timing update.
 
 We compare the performance between OpenTimer v1 and v2. 
 We evaluated the runtime versus incremental iterations under 16 CPUs on two industrial circuit designs
-tv80 (5.3K gates and 5.3K nets) and vga_lcd (139.5K gates and 139.6K nets) with 45nm NanGate cell libraris. 
-Each incremental iteration refers a design modification followed
+tv80 (5.3K gates and 5.3K nets) and vga_lcd (139.5K gates and 139.6K nets) with 45nm NanGate cell libraries. 
+Each incremental iteration refers to a design modification followed
 by a timing query to trigger a timing update. 
 In v1, this includes the time to reconstruct the data structure required by
 OpenMP to alter the task dependencies. 
@@ -87,7 +87,7 @@ that would otherwise not be possible with OpenMP.
 @section UseCaseOpenTimerConclusion Conclusion
 
 Programming models matter. Different models give different implementations. 
-The parallel code sections may run fast, yet the data structures to support 
+The parallel code sections may run fast, yet for the data structures to support 
 a parallel decomposition strategy may outweigh its parallelism benefits. 
 In OpenTimer v1, loop-based OpenMP code is very fast. But it's too costly to
 maintain the pipeline data structure over iterations.
